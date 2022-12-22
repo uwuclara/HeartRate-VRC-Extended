@@ -1,6 +1,6 @@
 # HeartRate-VRC-Extended
 Is another HeartRate app for VRChat. Gives bunch of config options. Supports Bluetooth(tested), HypeRate(tested) and Stromno(not tested). 
-When using HypeRate/Stromno, it uses 200Tigersbloxed's proxy with his API Key. 
+When using HypeRate/Stromno, it uses 200Tigersbloxed's proxy with his API Key. U can try using ur own API Key for HypeRate(not tested).
 Recommend using 200Tigersbloxed's repo instead if u don't need extra options.
 
 ## Config
