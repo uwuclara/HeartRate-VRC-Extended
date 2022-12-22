@@ -30,7 +30,7 @@ put_to_file = false
 # Outputs - Config
 discord_rpcid = "1055058124266016808"
 discord_game_desc = "My HeartRate <3 is"
-chat_oscmessage = "HeartRate: %HR% BPM <3"
+chat_oscmessage = "HeartRate: %HR% BPM <3" //Must contain %HR%. %HR% gets replaced with ur actual HeartRate
 
 # Outputs - Config - OSC Remote
 oscaddress = "127.0.0.1" //When using Quest put IP of ur quest
