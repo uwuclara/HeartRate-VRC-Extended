@@ -20,6 +20,7 @@ hype_rate_apikey = ""
 # Timeout
 time_out_interval = 4.0
 restart_delay = 4.0
+serviceRefreshDelay = 3; //define how often outputs will be updated. OSC parmeters & putToFile do not have delay
 
 # Outputs
 use_discord_rpc = false
