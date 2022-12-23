@@ -16,6 +16,7 @@ namespace HRPresence
         //Timeout
         public float TimeOutInterval { get; set; } = 4f;
         public float RestartDelay { get; set; } = 4f;
+        public int serviceRefreshDelay  { get; set; } = 3;
         
         //Outputs
         public bool UseDiscordRPC { get; set; } = false;

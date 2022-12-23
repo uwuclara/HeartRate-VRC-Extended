@@ -128,6 +128,12 @@ namespace HRPresence
                 Thread.Sleep(5000);
                 Environment.Exit(1);
             }
+
+            if (config.serviceRefreshDelay < 2)
+            {
+                config.serviceRefreshDelay = 2;
+                Console.Write("It is not recommended to update output less than every 2 seconds. (outside OSC par. and writeToFile)");
+            }
             
             //Console
             Console.SetCursorPosition(0, 0);
@@ -196,7 +202,7 @@ namespace HRPresence
 
                 OSCChatBox.Updated(beats);
 
-                Thread.Sleep(2000);
+                Thread.Sleep(config.serviceRefreshDelay * 1000);
                 
             }
         }
