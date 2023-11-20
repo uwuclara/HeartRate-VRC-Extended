@@ -40,17 +40,17 @@ namespace HRPresence
     {
         bool IsDisposed { get; }
 
-        event HeartRateService.HeartRateUpdateEventHandler HeartRateUpdated;
+        event Bluetooth_Service.HeartRateUpdateEventHandler HeartRateUpdated;
         void InitiateDefault();
         void Cleanup();
     }
 
-    static class MemoryStreamExtensions
+    internal static class MemoryStreamExtensions
     {
         public static ushort ReadUInt16(this MemoryStream s)
             => (ushort)(s.ReadByte() | (s.ReadByte() << 8));
     }
-    internal class HeartRateService : IHeartRateService
+    internal class Bluetooth_Service : IHeartRateService
     {
         // https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.characteristic.heart_rate_measurement.xml
         private const int _heartRateMeasurementCharacteristicId = 0x2A37;
@@ -70,14 +70,14 @@ namespace HRPresence
         {
             var heartrateSelector = GattDeviceService
                 .GetDeviceSelectorFromUuid(GattServiceUuids.HeartRate);
-
+            
             var devices = DeviceInformation
                 .FindAllAsync(heartrateSelector)
                 .GetAwaiter()
                 .GetResult();
-
+            
             var device = devices.FirstOrDefault();
-
+            
             if (device == null) 
             {
                 throw new ArgumentNullException(
@@ -91,13 +91,13 @@ namespace HRPresence
             {
                 if (IsDisposed)
                     throw new ObjectDisposedException(GetType().Name);
-
+               
                 Cleanup();
-
+                
                 service = GattDeviceService.FromIdAsync(device.Id)
                     .GetAwaiter()
                     .GetResult();
-
+                
                 _service = service;
             }
 
@@ -106,7 +106,7 @@ namespace HRPresence
                 throw new ArgumentOutOfRangeException(
                     $"Unable to get service to {device.Name} ({device.Id}). Is the device inuse by another program? The Bluetooth adaptor may need to be turned off and on again.");
             }
-
+            
             var heartrate = service
                 .GetCharacteristicsForUuidAsync(_heartRateMeasurementCharacteristicUuid)
                 .GetAwaiter()

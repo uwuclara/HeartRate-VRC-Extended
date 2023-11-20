@@ -8,41 +8,42 @@ Recommend using 200Tigersbloxed's repo instead if u don't need extra options.
 ```toml
 # config.toml
 
-# Services (Must pick 1)
-use_bluetooth = false
-use_hype_rate = false
-use_stromno = false
+# Services - Select (Must pick 1)
+input_bluetooth = false
+input_hype_rate = false
+input_stromno = false
 
 # Services - Config
-hype_rate_or_stromno_session_id = "" //For HypeRate u can use test sessionID "internal-testing". Use only sessionID not the whole like (Example) https://app.hyperate.io/internal-testing - use "internal-testing"
-hype_rate_apikey = ""
+hyperate_or_stromno_session_id = "" //For HypeRate u can use test sessionID "internal-testing". Use only sessionID not the whole like (Example) https://app.hyperate.io/internal-testing - use "internal-testing"
+hyperate_apikey = "" // todo
 
 # Timeout
-time_out_interval = 4.0
-restart_delay = 4.0
-serviceRefreshDelay = 3 //define how often outputs will be updated. OSC parmeters & putToFile do not have delay
+delay_restart_input = 5.0 // when heartrate not detected auto reconnect delay
+delay_serviceRefresh = 2 //define how often outputs will be updated. OSC parmeters & putToFile do not have delay
 
 # Outputs
-use_discord_rpc = false
-use_parameters_osc = false
-use_chat_osc = false
-put_to_file = false
+output_discord_rpc = false
+output_parameters_osc = false
+output_chat_osc = false
+output_put_to_file = false
 
-# Outputs - Config
+# Outputs - Config - Discord
 discord_rpcid = "1055058124266016808"
 discord_game_desc = "My HeartRate <3 is"
-chat_oscmessage = "HeartRate: %HR% BPM <3" //Must contain %HR%. %HR% gets replaced with ur actual HeartRate
 
-# Outputs - Config - OSC Remote
-oscaddress = "127.0.0.1" //When using Quest put IP of ur quest
-oscport = 9000
+# Outputs - Config - OSC - Remote
+osc_address = "127.0.0.1" //When using Quest put IP of ur quest
+osc_port = 9000
 
-# Outputs - Config - OSC Avatar Parameters
-oscheart_rate_name_int = "HR"
-oscheart_rate_name_float = "floatHR"
-oscheart_rate_name_ones = "onesHR"
-oscheart_rate_name_tens = "tensHR"
-oscheart_rate_name_hundreds = "hundredsHR"
+# Outputs - Config - OSC - ChatBox
+osc_chatBox_Message = "HeartRate: %HR% BPM <3" //Must contain %HR%. %HR% gets replaced with ur actual HeartRate
+
+# Outputs - Config - OSC - Avatar Parameters
+osc_heartrate_name_int = "HR"
+osc_heartrate_name_float = "floatHR"
+osc_heartrate_name_ones = "onesHR"
+osc_heartrate_name_tens = "tensHR"
+osc_heartrate_name_hundreds = "hundredsHR"
 
 ```
 
