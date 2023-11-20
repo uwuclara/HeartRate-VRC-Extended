@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HeartRateApp")]
-[assembly: AssemblyDescription("HeartRate App")]
+[assembly: AssemblyTitle("HRPresence")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("uwuclara.dev")]
-[assembly: AssemblyProduct("HeartRateApp")]
-[assembly: AssemblyCopyright("Copyright ©  2023")]
-[assembly: AssemblyTrademark("uwuclara.dev")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("HRPresence")]
+[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
